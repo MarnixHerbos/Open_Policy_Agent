@@ -1,0 +1,275 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* Light color for business area */
+    margin: 1px; /* Reduced overall margin */
+    padding: 1px; /* Reduced overall padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    margin: 4px; /* Reduced button margin */
+    padding: 6px 10px; /* Smaller button padding */
+    border: none;
+    background-color: #cad2d5; /* Grijs */
+    color: #14102A; /* Donkerblauw */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 0.95rem; /* Smaller font size for buttons */
+}
+
+.btn-small {
+    display: inline-block;
+    margin: 2px;
+    padding: 3px 5px;
+    border: none;
+    background-color: #cad2d5;
+    color: #14102A;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 0.70rem;
+}
+
+.hidden {
+    display:none;
+}
+
+.btn:hover {
+    background-color: #f1ec40; /* Geel */
+}
+
+.menu-item {
+    margin-bottom: 10px; /* Reduced margin for menu items */
+}
+
+.explanation {
+    margin-top: 6px; /* Reduced top margin for explanations */
+    font-size: 0.95rem; /* Smaller font size for explanations */
+    color: #666;
+}
+
+#out {
+    width: 70%; /* Adjusted width */
+    min-width: 100%;
+    background-color: white;
+    margin-top: 15px; /* Reduced top margin */
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.80rem; /* Reduced font size for output */
+    word-break: break-all; /* This will break long words to ensure they don't overflow */
+    overflow: auto; /* Adds a scrollbar if the content overflows */
+}
+
+@media (max-width: 800px) {
+    #out {
+        order: 3; /* Ensure it moves below on small screens */
+        width: 95%; /* More suitable for small screens */
+        max-width: none; /* Allows full width on small screens */
+    }
+
+    .block, #out {
+        width: 95%; /* More suitable for small screens */
+        max-width: none; /* Allows full width on small screens */
+    }
+}
+
+.blocks-container {
+    display: flex;
+    justify-content: center; /* Align blocks to the center */
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%; /* Full width to center the flex items */
+}
+
+.block-logs-container {
+    display: flex;
+    justify-content: center; /* Align blocks to the center */
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%; /* Full width to center the flex items */
+}
+
+.block {
+    margin-bottom: 10px; /* Reduced block margin */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for subtlety */
+    padding: 5px; /* Reduced block padding */
+    width: 70%; /* Adjust based on screen size */
+    max-width: 600px; /* Further reduced for a more compact layout */
+    min-width: 180px;
+}
+
+.block-buttons {
+    margin-bottom: 10px; /* Reduced block margin */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for subtlety */
+    padding: 5px; /* Reduced block padding */
+    width: 70%; /* Adjust based on screen size */
+    max-width: 600px; /* Further reduced for a more compact layout */
+    min-width: 180px;
+    display: flex;
+    justify-content: center;
+}
+
+.block-inner {
+    background-color: #fff;
+    border-color: #bcbcbc;
+    border-style:solid;
+    border-width: 1px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: auto; /* Adjusted to auto for content-based width */
+    max-width:180px;
+    text-align:center
+}
+
+.block-logs-stacked-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Adjust based on how you want to distribute space */
+    max-height: 600px; /* Match the height of .block-logs */
+    width: 100%;
+    max-width: 380px; /* Assuming you want it to match the width settings of your .block-logs */
+}
+
+.block-stacked {
+    height: calc(50% - 5px); /* Adjust the 5px if you have a gap or margin you want to account for */
+    /* Your existing styles for .block-stacked */
+}
+
+@media (max-width: 1600px) {
+    .blocks-container {
+        display: flex;
+        justify-content: center; /* Align blocks to the center */
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%; /* Full width to center the flex items */
+    }
+
+    .block-inner {
+        margin-bottom: 15px;
+        background-color: #fff;
+        border-color: #bcbcbc;
+        border-style:solid;
+        border-width: 1px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: auto; /* Adjusted to auto for content-based width */
+        text-align:center
+    }
+
+    .block-logs {
+        min-width: 380px;
+        max-width: 380px
+    }
+
+}
+@media (max-width: 800px) {
+    .blocks-container {
+        flex-direction: column;
+        align-items: center; /* Center blocks vertically for small screens */
+    }
+
+    .block, .block-inner {
+        width: 95%; /* Full width for smaller screens to maintain responsiveness */
+        max-width: 380px; /* Overrides previous max width settings */
+        min-width: 380px;
+        margin-bottom: 15px; /* Ensures consistent margin on smaller screens */
+        text-align:center
+    }
+
+    .block:not(.block-inner) {
+        width: auto; /* Adjust to auto for standalone blocks if you want them to fit content */
+        max-width: 380px; /* Overrides previous max width settings */
+        min-width: 380px;
+        margin-bottom: 15px;
+        /* Other styles remain the same */
+    }
+}
+
+.http-log { /* Styles for the container of HTTP logs */
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+.log-request { /* Styles for request logs */
+    color: blue;
+}
+.log-response { /* Styles for response logs */
+    color: green;
+}
+.http-transaction-separator { /* Styles for the separator */
+    height: 2px;
+    background-color: #eee;
+    margin: 4px 0;
+}
+
+hr {
+    border: 0; 
+    clear: both; 
+    display: block; 
+    width: 50%; /* Makes the line half the width of its container */
+    margin: 10px auto; /* Center the line and add some space around it */
+    height: 1px; /* Sets the thickness of the line */
+    background-color: #000; /* Sets the color of the line */
+  }
+
+.log-container {
+    position: relative; /* Allows for absolute positioning inside */
+}
+
+.clear-logs-btn {
+    position: absolute; /* Position the button within the log container */
+    top: 5px; /* Adjust these values based on your layout and preferences */
+    left: 5px;
+    z-index: 10; /* Ensure the button is above other content */
+    padding: 2px 5px; /* Smaller padding for a smaller button */
+    font-size: 0.8rem; /* Smaller font size for a tiny button */
+    cursor: pointer; /* Change cursor to pointer on hover over the button */
+}
+
+.block-logs {
+    background-color: #f9f9f9; /* Slightly different from the business section */
+    border-radius: 0px;
+    border-color: #e1e1e1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 10px;
+    margin-bottom: 15px;
+    min-width: 380px;
+    border-style: dashed;
+}
+iframe {
+    border: none;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.log-title {
+    font-size: 0.8rem;
+    padding: 0px;
+    margin: 0px;
+   font-style:italic;
+   color: #028389;
+}
+
+.log-subtitle {
+    font-size: 0.8rem;
+    font-style: italic;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 2px;
+}
+
+.result {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px;
+}

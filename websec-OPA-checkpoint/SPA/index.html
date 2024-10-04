@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SPA OIDC demo</title>
+        <link rel="stylesheet" href="./spa.css">
+    </head>
+    <body>
+        <!-- Commented out part remains unchanged -->
+        <div class="block-buttons block1">
+            <button id="startSigninMainWindow" class="btn btn-small">Log in</button>
+            <button id="getUser" class="btn btn-small">Get user</button>
+            <!-- <button id="removeUser" class="btn btn-small">Simple log out</button> -->
+            <button id="logoutUser" class="btn btn-small">Log out</button>
+            <button id="clearState" class="btn btn-small">Clear state</button>
+            <button id="clearAllLogs" class="btn btn-small">Clear all logs</button>
+            <button id="toggleLogs" class="btn btn-small">Toggle logs</button>
+            <!-- Commented out button remains unchanged -->
+        </div>
+        <div class="blocks-container"> <!-- New container for horizontal layout -->
+            <div class="block-buttons block-inner block2">
+                <div class="menu-item">
+                    <p class="explanation">Drinks for everyone</p> <!-- Explanation for Order Fristi -->
+                    <button id="orderFristi" class="btn">Order Fristi</button>
+                </div>
+            </div>
+            <div class="block-buttons block-inner block3">
+                <div class="menu-item">
+                    <p class="explanation">Drinks for 16+</p> <!-- Explanation for Order Beer -->
+                    <button id="orderBeer" class="btn">Order beer</button>
+                </div>
+            </div>
+            <div class="block-buttons block-inner block4">
+                <div class="menu-item">
+                    <p class="explanation">Bar management</p> <!-- Explanation for Add a drink -->
+                    <button id="manageDrinks" class="btn">Add drink</button>
+                </div>
+            </div>
+        </div> <!-- End of new container -->
+        <div id="result" class="result"></div>
+
+        <!-- Logs -->
+        <hr>
+        <div class="block-logs-container">
+            <div class="block block-logs"> <!-- New block for the logs section -->
+                <p class="log-title">Component 1: Drink order app logs </p> 
+                <button id="clearLogs" class="btn hidden">Clear Logs</button>
+                <pre id="out"></pre> <!-- The container for the logs -->
+            </div>
+            <script type="module" src="./spa.js"></script>
+        </div>
+    </body>
+</html>

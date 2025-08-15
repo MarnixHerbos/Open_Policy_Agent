@@ -12,3 +12,6 @@
 /OPA/opa_windows_amd64.exe
 /LogService/node_modules
 /LogService/package-lock.json
+
+/OPA/opa_copy.rego
+/OPA/opa_works_for_curls.rego

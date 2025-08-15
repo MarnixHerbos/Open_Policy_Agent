@@ -43,15 +43,20 @@ services:
       - "-l"
       - "debug"
       - "--server"
-      - "/opa.rego"
+      - "--addr"
+      - "0.0.0.0:8181"
+      - "/policies"
+      #- "/opa.rego"
     #  - "--config-file"
     #  - "/config.yaml"
       - "--log-format"
       - "json-pretty"
       - "--watch"
     volumes:
-    - ./OPA/opa.rego:/opa.rego
-   # - ./OPA/config.yaml:/config.yaml
+    #- ./OPA/opa.rego:/opa.rego
+
+    - ./OPA/policies:/policies
+    #- ./OPA/config.yaml:/config.yaml
     networks:
      - default  
     ports:

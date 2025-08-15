@@ -1,0 +1,17 @@
+{
+  "input": {
+    "request": {
+      "path": "/api/bar",
+      "method": "POST",
+      "body": {
+        "DrinkName": "Beer"
+      },
+      "auth": {
+        "claims": {
+          "role": ["customer"],
+          "age": "17"
+        }
+      }
+    }
+  }
+}
